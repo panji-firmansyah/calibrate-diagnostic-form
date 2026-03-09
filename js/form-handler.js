@@ -108,9 +108,19 @@ document.addEventListener("DOMContentLoaded", function () {
         form.style.display = "none";
         showMessage(
           "success",
-          "<h3>Terima kasih.</h3>" +
-          "<p>Diagnostic Anda sudah tercatat.</p>" +
-          "<p>Personalized scorecard akan dikirimkan dalam 24 jam setelah event.</p>"
+          '<div class="confirm-icon">' +
+            '<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+            '<circle cx="22" cy="22" r="21" stroke="rgba(196,30,58,0.45)" stroke-width="1"/>' +
+            '<path d="M14 22l6 6 10-12" stroke="#C41E3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+            '</svg>' +
+          '</div>' +
+          '<div class="confirm-eyebrow">Calibrate — Talent Diagnostic</div>' +
+          '<h3>Terima Kasih.</h3>' +
+          '<hr class="confirm-divider">' +
+          '<div class="confirm-body">' +
+            '<p>Diagnostic Anda sudah tercatat.</p>' +
+            '<p>Personalized scorecard akan dikirimkan<br>dalam 24 jam setelah event.</p>' +
+          '</div>'
         );
       })
       .catch(function (error) {

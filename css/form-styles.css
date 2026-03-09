@@ -425,27 +425,30 @@ body {
 }
 
 /* ============================================================
-   FORM MESSAGE — Sukses/error setelah submit
+   FORM MESSAGE — Konfirmasi setelah submit
    ============================================================ */
 .form-message {
   display: none;
-  padding: var(--space-8);
-  font-size: 0.9rem;
+  padding: var(--space-10);
   margin-top: var(--space-4);
   text-align: center;
-  animation: fadeInUp 300ms var(--ease-decisive);
+  animation: fadeInUp var(--duration-slow) var(--ease-decisive);
 }
 
 .form-message.success {
-  background-color: var(--color-success-bg);
-  color: var(--color-success);
-  border: 1px solid var(--color-success-border);
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(196, 30, 58, 0.35);
+  border-radius: var(--border-radius);
+  color: var(--color-text-body);
 }
 
 .form-message.error {
   background-color: var(--color-error-bg);
   color: var(--color-error);
   border: 1px solid var(--color-error-border);
+  border-radius: var(--border-radius);
 }
 
 .form-message h3 {
@@ -453,12 +456,38 @@ body {
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+/* Checkmark SVG wrapper */
+.confirm-icon {
+  margin-bottom: var(--space-6);
+}
+
+/* Eyebrow — branding kecil di atas judul */
+.confirm-eyebrow {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
   margin-bottom: var(--space-3);
 }
 
-.form-message p {
+/* Divider merah pendek dan centered */
+.confirm-divider {
+  border: none;
+  border-top: 1px solid rgba(196, 30, 58, 0.4);
+  width: 48px;
+  margin: var(--space-4) auto var(--space-6);
+}
+
+/* Paragraf body konfirmasi */
+.confirm-body p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
   margin-bottom: var(--space-2);
-  color: var(--color-text-body);
 }
 
 /* ============================================================
