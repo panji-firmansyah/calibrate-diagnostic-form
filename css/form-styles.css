@@ -532,7 +532,8 @@ body {
    ============================================================ */
 @media (max-width: 480px) {
   body {
-    padding: 16px 12px;
+    /* Padding kiri-kanan lebih besar supaya galaxy background peek di sisi form */
+    padding: 28px 20px;
   }
 
   .form-container {
