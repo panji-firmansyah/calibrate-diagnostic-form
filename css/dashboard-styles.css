@@ -1,21 +1,21 @@
 /*
  * Calibrate Dashboard — Admin Styles
  *
- * Reuses design tokens dari form-styles.css
- * Layout: 2-column wide-screen optimized untuk presentasi layar besar
+ * Optimized untuk presentasi layar besar (TV/projector)
+ * Angka besar, kontras tinggi, terbaca dari jauh
  */
 
 /* ============================================================
-   DASHBOARD LAYOUT — Wide screen
+   DASHBOARD LAYOUT — Full wide screen
    ============================================================ */
 .dashboard-frame {
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 .dashboard-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: var(--space-10);
+  padding: var(--space-10) var(--space-12);
   position: relative;
   overflow: hidden;
 }
@@ -58,8 +58,8 @@
 .dashboard-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
-  margin-bottom: var(--space-8);
+  gap: var(--space-10);
+  margin-bottom: var(--space-10);
 }
 
 .dashboard-col {
@@ -69,7 +69,7 @@
 }
 
 /* ============================================================
-   DASHBOARD HEADER
+   DASHBOARD HEADER — Compact, besar, bold
    ============================================================ */
 .dashboard-header {
   text-align: center;
@@ -78,38 +78,38 @@
 
 .dashboard-eyebrow {
   font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 500;
+  font-size: 0.7rem;
+  font-weight: 600;
   color: var(--color-text-muted);
-  letter-spacing: 0.25em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
 .dashboard-title {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--color-text-primary);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   line-height: 1;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
 .dashboard-subtitle {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-accent);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
 .dashboard-meta {
   color: var(--color-text-muted);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 /* ============================================================
@@ -123,14 +123,14 @@
 
 .dashboard-loading {
   color: var(--color-text-muted);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .loading-spinner {
   display: inline-block;
-  width: 32px;
-  height: 32px;
-  border: 2px solid rgba(196, 30, 58, 0.2);
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(196, 30, 58, 0.2);
   border-top-color: var(--color-accent);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -143,81 +143,80 @@
 
 .dashboard-error {
   color: var(--color-error);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .dashboard-empty {
   text-align: center;
   padding: var(--space-12) var(--space-6);
   color: var(--color-text-muted);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 /* ============================================================
-   STAT CARDS — 5 cards in a row
+   STAT CARDS — Angka BESAR, terbaca dari jauh
    ============================================================ */
 .stat-cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-3);
-  margin-bottom: var(--space-8);
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
 }
 
 .stat-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--border-radius);
-  padding: var(--space-4) var(--space-3);
+  padding: var(--space-6) var(--space-4);
   text-align: center;
-  transition: border-color var(--duration-fast) var(--ease-out);
-}
-
-.stat-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .stat-value {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 3.5rem;
+  font-weight: 900;
   color: var(--color-text-primary);
-  line-height: 1.1;
-  margin-bottom: var(--space-1);
+  line-height: 1;
+  margin-bottom: var(--space-2);
 }
 
 .stat-label {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--color-text-muted);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-/* Highlight cards: terkuat & terlemah */
+/* Highlight cards */
 .stat-card--strong {
-  border-color: rgba(22, 163, 74, 0.3);
+  border-color: rgba(22, 163, 74, 0.35);
+  background: rgba(22, 163, 74, 0.06);
 }
 
 .stat-card--strong .stat-value {
   color: #16A34A;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 800;
+  line-height: 1.3;
 }
 
 .stat-card--weak {
-  border-color: rgba(196, 30, 58, 0.3);
+  border-color: rgba(196, 30, 58, 0.35);
+  background: rgba(196, 30, 58, 0.06);
 }
 
 .stat-card--weak .stat-value {
   color: #C41E3A;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 800;
+  line-height: 1.3;
 }
 
 /* ============================================================
-   SECTION DIVIDERS
+   SECTION
    ============================================================ */
 .dashboard-section {
   margin-bottom: var(--space-8);
@@ -227,12 +226,12 @@
 
 .dashboard-section:last-of-type {
   border-bottom: none;
-  margin-bottom: var(--space-6);
+  margin-bottom: 0;
   padding-bottom: 0;
 }
 
 .section-title {
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--color-text-muted);
   letter-spacing: 0.18em;
@@ -242,7 +241,7 @@
 }
 
 /* ============================================================
-   RADAR CHART
+   RADAR CHART — Besar
    ============================================================ */
 .radar-container {
   display: flex;
@@ -252,7 +251,7 @@
 
 .radar-container svg {
   width: 100%;
-  max-width: 400px;
+  max-width: 480px;
   height: auto;
 }
 
@@ -261,18 +260,18 @@
 }
 
 /* ============================================================
-   DIMENSION BARS
+   DIMENSION BARS — Tebal, angka besar
    ============================================================ */
 .dimension-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-6);
 }
 
 .dimension-item {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-2);
 }
 
 .dimension-header {
@@ -282,42 +281,42 @@
 }
 
 .dimension-name {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--color-text-body);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
 
 .dimension-score {
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 1.4rem;
+  font-weight: 900;
   color: var(--color-text-primary);
 }
 
 .dimension-bar-track {
   width: 100%;
-  height: 10px;
+  height: 16px;
   background: rgba(255, 255, 255, 0.06);
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
 .dimension-bar-fill {
   height: 100%;
-  border-radius: 5px;
+  border-radius: 8px;
   transition: width 0.8s var(--ease-decisive);
   width: 0;
 }
 
 .dimension-insight {
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   color: var(--color-text-muted);
   font-style: italic;
 }
 
 /* ============================================================
-   TIER DISTRIBUTION
+   TIER DISTRIBUTION — Bar besar
    ============================================================ */
 .tier-list {
   display: flex;
@@ -327,46 +326,46 @@
 
 .tier-item {
   display: grid;
-  grid-template-columns: 110px 1fr auto;
-  gap: var(--space-3);
+  grid-template-columns: 130px 1fr auto;
+  gap: var(--space-4);
   align-items: center;
 }
 
 .tier-label {
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--color-text-body);
 }
 
 .tier-bar-track {
-  height: 28px;
+  height: 36px;
   background: rgba(255, 255, 255, 0.04);
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .tier-bar-fill {
   height: 100%;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: width 0.8s var(--ease-decisive);
   display: flex;
   align-items: center;
-  padding-left: var(--space-2);
+  padding-left: var(--space-3);
   min-width: 0;
   width: 0;
 }
 
 .tier-count {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-text-muted);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-text-body);
   white-space: nowrap;
-  min-width: 70px;
+  min-width: 80px;
   text-align: right;
 }
 
 /* ============================================================
-   DIMENSI BREAKDOWN — Distribusi jawaban 1-5 per dimensi
+   DIMENSI BREAKDOWN — Stacked bar besar
    ============================================================ */
 .breakdown-list {
   display: flex;
@@ -377,22 +376,21 @@
 .breakdown-item {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-2);
 }
 
 .breakdown-label {
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--color-text-body);
-  letter-spacing: 0.04em;
-  margin-bottom: var(--space-1);
+  letter-spacing: 0.02em;
 }
 
 .breakdown-bars {
   display: flex;
   gap: 2px;
-  height: 24px;
-  border-radius: 4px;
+  height: 36px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
@@ -401,9 +399,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.6rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
   transition: width 0.8s var(--ease-decisive);
   width: 0;
   min-width: 0;
@@ -419,23 +417,24 @@
 
 .breakdown-legend {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-4);
   justify-content: center;
-  margin-top: var(--space-2);
+  margin-top: var(--space-4);
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 0.55rem;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--color-text-muted);
 }
 
 .legend-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
   flex-shrink: 0;
 }
 
@@ -444,19 +443,19 @@
    ============================================================ */
 .dashboard-actions {
   text-align: center;
-  margin-top: var(--space-8);
+  margin-top: var(--space-10);
 }
 
 .btn-export {
   display: inline-block;
-  padding: var(--space-4) var(--space-8);
-  min-height: 52px;
+  padding: var(--space-4) var(--space-10);
+  min-height: 56px;
   border: 1.5px solid var(--color-accent-gold);
   border-radius: var(--border-radius);
   background: rgba(201, 168, 76, 0.1);
   color: var(--color-accent-gold);
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -490,7 +489,7 @@
 }
 
 .dashboard-footer p {
-  font-size: 10px;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -520,13 +519,19 @@
 }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE — Fallback untuk layar lebih kecil
    ============================================================ */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .dashboard-frame {
     max-width: 100%;
   }
 
+  .stat-value {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 900px) {
   .dashboard-row {
     grid-template-columns: 1fr;
     gap: var(--space-6);
@@ -534,6 +539,11 @@
 
   .stat-cards {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stat-card--strong .stat-value,
+  .stat-card--weak .stat-value {
+    font-size: 1.1rem;
   }
 }
 
@@ -546,30 +556,25 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .stat-value {
+    font-size: 2rem;
+  }
+
   .dashboard-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .radar-container svg {
-    max-width: 280px;
+    max-width: 300px;
   }
 
   .tier-item {
     grid-template-columns: 90px 1fr auto;
   }
-}
 
-@media (max-width: 400px) {
-  .stat-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .tier-item {
-    grid-template-columns: 1fr;
-    gap: var(--space-1);
-  }
-
-  .tier-count {
-    text-align: left;
+  .dimension-name,
+  .tier-label,
+  .breakdown-label {
+    font-size: 0.85rem;
   }
 }

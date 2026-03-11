@@ -230,10 +230,10 @@ function renderSummaryCards(data, averages) {
 // ============================================================
 function renderRadarChart(averages) {
   var container = document.getElementById("radar-chart");
-  var size = 400;
+  var size = 480;
   var cx = size / 2;
   var cy = size / 2;
-  var radius = 145;
+  var radius = 170;
   var levels = 5;
 
   var axes = DIMENSIONS.map(function (dim, i) {
@@ -324,7 +324,7 @@ function renderRadarChart(averages) {
   // Axis labels + score
   axes.forEach(function (axis) {
     var score = averages[axis.key] || 0;
-    var labelR = radius + 30;
+    var labelR = radius + 35;
     var x = cx + labelR * Math.cos(axis.angle);
     var y = cy + labelR * Math.sin(axis.angle);
 
@@ -339,7 +339,7 @@ function renderRadarChart(averages) {
     svgParts.push(
       '<text x="' + x.toFixed(1) + '" y="' + (y + yOffset).toFixed(1) + '" ' +
       'text-anchor="' + anchor + '" ' +
-      'fill="#E0E0E0" font-size="12" font-weight="600">' +
+      'fill="#E0E0E0" font-size="14" font-weight="700">' +
       axis.label +
       "</text>"
     );
@@ -347,7 +347,7 @@ function renderRadarChart(averages) {
     svgParts.push(
       '<text x="' + x.toFixed(1) + '" y="' + (y + yOffset + 16).toFixed(1) + '" ' +
       'text-anchor="' + anchor + '" ' +
-      'fill="#C41E3A" font-size="14" font-weight="800">' +
+      'fill="#C41E3A" font-size="16" font-weight="900">' +
       score.toFixed(1) +
       "</text>"
     );
@@ -445,7 +445,7 @@ function renderDimensionBreakdown(data) {
 
     for (var s = 1; s <= 5; s++) {
       var pct = total > 0 ? (counts[s] / total) * 100 : 0;
-      var label = pct >= 12 ? counts[s] : "";
+      var label = pct >= 8 ? Math.round(pct) + "%" : "";
       html +=
         '<div class="breakdown-segment" data-score="' + s + '" ' +
         'data-width="' + pct + '" ' +
