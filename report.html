@@ -527,30 +527,6 @@
     .nav select { max-width: 100%; order: 5; flex-basis: 100%; }
     #bdFilter { order: 4; flex-basis: 100%; max-width: 100%; }
     .header-meta { flex-direction: column; gap: 4px; }
-    /* Login responsive */
-    .login-card {
-      max-width: 320px;
-      padding: 32px 28px;
-      border-radius: 14px;
-    }
-    .login-card h2 {
-      font-size: 1.6rem;
-    }
-    .login-card .login-sub {
-      font-size: 0.65rem;
-      margin-bottom: 22px;
-    }
-    .login-input-group {
-      padding: 0 14px;
-    }
-    .login-input-group input {
-      padding: 10px 0;
-      font-size: 13px;
-    }
-    .login-card .login-btn {
-      padding: 11px;
-      font-size: 0.8rem;
-    }
   }
   /* --- LOGIN OVERLAY — Dark Galaxy Glassmorphism Theme --- */
   .login-overlay {
@@ -673,6 +649,40 @@
     margin-top: 40px;
     text-align: center;
     z-index: 1;
+  }
+  /* --- LOGIN + NAV MOBILE RESPONSIVE --- */
+  @media (max-width: 640px) {
+    .nav-brand img { height: 24px !important; }
+    .nav-brand { font-size: 11px; gap: 6px; }
+    .nav-sep { font-size: 14px; }
+    .nav-calibrate { font-size: 11px; letter-spacing: 1px; }
+    .login-card {
+      max-width: 320px;
+      padding: 32px 28px;
+      border-radius: 14px;
+    }
+    .login-card h2 {
+      font-size: 1.6rem;
+    }
+    .login-card .login-sub {
+      font-size: 0.65rem;
+      margin-bottom: 22px;
+    }
+    .login-input-group {
+      padding: 0 14px;
+    }
+    .login-input-group input {
+      padding: 10px 0;
+      font-size: 13px;
+    }
+    .login-card .login-btn {
+      padding: 11px;
+      font-size: 0.8rem;
+    }
+    .login-footer-text {
+      margin-top: 28px;
+      font-size: 8px;
+    }
   }
 </style>
 </head>
