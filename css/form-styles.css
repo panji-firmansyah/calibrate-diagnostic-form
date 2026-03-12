@@ -263,25 +263,46 @@ body {
               box-shadow var(--duration-fast) var(--ease-out);
 }
 
-.form-group input::placeholder {
+.form-group input::placeholder,
+.form-group textarea::placeholder {
   color: var(--color-text-muted);
 }
 
-.form-group input:hover {
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: rgba(0, 0, 0, 0.35);
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: var(--color-accent);
   box-shadow: 0 0 0 2px var(--color-accent-glow);
 }
 
-.form-group.has-error input {
+.form-group.has-error input,
+.form-group.has-error textarea {
   border-color: var(--color-error);
 }
 
-.form-group.has-error input:focus {
+.form-group.has-error input:focus,
+.form-group.has-error textarea:focus {
   box-shadow: 0 0 0 2px var(--color-error-bg);
 }
 
